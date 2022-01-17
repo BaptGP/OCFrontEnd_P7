@@ -1,1 +1,43 @@
-<mxfile host="app.diagrams.net" modified="2022-01-11T09:06:30.932Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4736.0 Safari/537.36 OPR/84.0.4284.0 (Edition developer)" version="15.7.3" etag="s92PCtwfQ7P9hsWNwVvZ" type="github"><diagram id="VnN9kI5x3cPr0p53kd6e">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-01-17T13:27:31.619Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4750.0 Safari/537.36 OPR/84.0.4295.0 (Edition developer)" etag="NnsfvjiWlc91a-TTD7Ir" version="16.2.4" type="github">
+  <diagram id="VnN9kI5x3cPr0p53kd6e" name="Page-1">
+    <mxGraphModel dx="1146" dy="668" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="MmiFpU_80hnKo81hImwU-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MmiFpU_80hnKo81hImwU-1" target="MmiFpU_80hnKo81hImwU-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MmiFpU_80hnKo81hImwU-1" value="L&#39;utilisateur lance une recherche" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6d0de;gradientColor=#d5739d;strokeColor=#996185;" vertex="1" parent="1">
+          <mxGeometry x="354" y="10" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MmiFpU_80hnKo81hImwU-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MmiFpU_80hnKo81hImwU-2" target="MmiFpU_80hnKo81hImwU-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MmiFpU_80hnKo81hImwU-2" value="Caractère &lt;br&gt;&amp;gt; 3" style="rhombus;whiteSpace=wrap;html=1;rounded=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="374" y="120" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MmiFpU_80hnKo81hImwU-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MmiFpU_80hnKo81hImwU-5" target="MmiFpU_80hnKo81hImwU-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MmiFpU_80hnKo81hImwU-5" value="Récupérer les données du titre, des ingrédients et de la descriptions et les rassemb:er dans un tableau" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#fff2cc;gradientColor=#ffd966;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="354" y="250" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="MmiFpU_80hnKo81hImwU-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MmiFpU_80hnKo81hImwU-9" target="MmiFpU_80hnKo81hImwU-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MmiFpU_80hnKo81hImwU-9" value="Utiliser&lt;br&gt;include" style="rhombus;whiteSpace=wrap;html=1;rounded=1;dashed=1;strokeColor=#FF8000;" vertex="1" parent="1">
+          <mxGeometry x="374" y="430" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MmiFpU_80hnKo81hImwU-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="MmiFpU_80hnKo81hImwU-11" target="MmiFpU_80hnKo81hImwU-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MmiFpU_80hnKo81hImwU-11" value="Si les élément du tableau inclus les caractère de recherche" style="whiteSpace=wrap;html=1;rounded=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MmiFpU_80hnKo81hImwU-13" value="Afficher la recette" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="354" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
