@@ -1,0 +1,412 @@
+/* CSS RESET */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: "Lato";
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* FONT */
+@font-face {
+  font-family: "Lato";
+  src: url("./fonts/Lato-Regular.ttf") format("truetype");
+ }
+
+/* LOGO */
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 42px;
+}
+
+/* SEARCH INPUT */
+.search {
+  display: flex;
+  width: 90%;
+  margin: 42px auto;
+  height: 69px;
+  background-color: #e7e7e7;
+  border-radius: 5px;
+}
+.search_input {
+  width: 95%;
+  border: none;
+  border-radius: 5px;
+  background-color: #e7e7e7;
+  padding: 1rem;
+}
+.search_icon {
+  display: flex;
+  width: 5%;
+  height: 69px;
+  justify-content: center;
+  align-items: center;
+}
+.fa-search {
+  font-size: 2rem;
+}
+
+/* SEARCH BUTTON */
+.button_search{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 0 auto;
+}
+.button__search {
+  display: flex;
+  height: 70px;
+  width: 100%;
+}
+.ingredient_button{
+    background-color: #3282F7;
+    border-radius: 5px 0 0 5px;
+    color: white;
+    padding-left: 1rem;
+}
+.ingredient_button::placeholder{
+    color: white;
+}
+.ingredient_button-search{
+    background-color: #3282F7;
+    border-radius: 0 5px 5px 0;
+    padding-right: 1rem;
+    color: white;
+}
+.appareils_button{
+    background-color: #68D9A4;
+    border-radius: 5px 0 0 5px;
+    color: white;
+    padding-left: 1rem;
+}
+.appareils_button::placeholder{
+    color: white;
+}
+.appareils_button-search{
+    background-color: #68D9A4;
+    border-radius: 0 5px 5px 0;
+    padding-right: 1rem;
+    color: white;
+}
+.ustensiles_button{
+    background-color: #ED6454;
+    border-radius: 5px 0 0 5px;
+    color: white;
+    padding-left: 1rem;
+}
+.ustensiles_button::placeholder{
+    color: white;
+}
+.ustensiles_button-search{
+    background-color: #ED6454;
+    border-radius: 0 5px 5px 0;
+    padding-right: 1rem;
+    color: white;
+}
+.chevron_search{
+    border: none;
+}
+.button_search input{
+    border: none;
+}
+.button-middle{
+    margin: 0 2rem;
+}
+
+
+/* RECETTES */
+#main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: 24px auto;
+}
+.recettes{
+    width: 380px;
+    height: 364px;
+    background-color: #C7BEBE;
+    margin: 24px 0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.recettes_content{
+    height: 50%;
+    border-radius: 0 0 5px 5px;
+    background-color: #E7E7E7;
+    overflow: hidden;
+    padding: 1rem;
+}
+.recettes_content-text{
+    
+    display: flex;
+    flex-direction: column;
+}
+.recettes_content_time{
+  font-weight: 600;
+}
+.fa-clock{
+  margin-right: 5px;
+}
+.recettes_content-title{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.recettes_content-ingredients{
+  display: flex;
+  font-size: 12px; 
+  
+}
+h1{
+  width:50%
+}
+.recettes_content-description{
+  display: flex;
+  font-size: 12px;
+  margin-top: 1rem;
+}
+.ingredients-div{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 10px;
+  flex-wrap: wrap;
+}
+.recettes_content-ingredients h2 {
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.description{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  width: 100%;
+  height: 0;
+}
+
+/* INGREDIENT BUTTON */
+.ingredient_list{
+  position: absolute;
+  flex-wrap: wrap;
+  width: 667px;
+  background-color: #3282F7;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  display: none;
+}
+.ingredient_list-deroulant {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  width: 11rem;
+  text-overflow: ellipsis;
+}
+.ingredient_list-deroulant:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* APPAREILS BUTTON */
+.appareils_list{
+  position: absolute;
+  flex-wrap: wrap;
+  width: 667px;
+  background-color: #68D9A4;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  display: none;
+}
+.appareil_list-deroulant {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  width: 11rem;
+  text-overflow: ellipsis;
+}
+.appareil_list-deroulant:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* USTENSILES BUTTON */
+.ustensiles_list{
+  position: absolute;
+  flex-wrap: wrap;
+  width: 667px;
+  background-color: #ED6454;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  display: none;
+}
+.ustensile_list-deroulant {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  width: 11rem;
+  text-overflow: ellipsis;
+}
+.ustensile_list-deroulant:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
+/*Selection Filtre*/
+.selection_filtre{
+  display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 2rem auto;
+}
+.selection_filtre-ingredient{
+  margin-right: 1rem;
+  background-color: #3282F7;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.selection_filtre-appareil{
+  margin-right: 1rem;
+  background-color: #68D9A4;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.selection_filtre-ustensile{
+  margin-right: 1rem;
+  background-color: #ED6454;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
