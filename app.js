@@ -1,6 +1,7 @@
 import { IngSelection } from "./Functions/SelectionIngredients.js";
 import { AppSelection } from "./Functions/SelectionAppareils.js";
 import { UstSelection } from "./Functions/SelectionUstensiles.js";
+import { contentMain } from "./Functions/Content.js";
 
 /* Recup JSON */
 function readTextFile(file, callback) {
@@ -34,15 +35,14 @@ readTextFile("./json/recettes.json", function (text) {
     });
     arrayIng.sort();
 
-    arrayApp.push(element.appliance)
+    arrayApp.push(element.appliance);
     arrayApp.sort();
 
     element.ustensils.forEach((ust) => {
-      arrayUst.push(ust)
-    })
-    arrayUst.sort()
+      arrayUst.push(ust);
+    });
+    arrayUst.sort();
   });
-
 
   //Search keyboard Ingredient
   const ingredientsList = document.getElementById("ingredient_list");
@@ -69,7 +69,7 @@ readTextFile("./json/recettes.json", function (text) {
         const ingredientOne = document.createElement("li");
         ingredientOne.setAttribute("class", "ingredient_list-deroulant");
         ingredientOne.innerHTML = ingredient;
-        
+
         ingredientsList.append(ingredientOne);
       });
       const ingredientButton = document.querySelector(".ingredient_button");
@@ -92,11 +92,6 @@ readTextFile("./json/recettes.json", function (text) {
   });
 
   IngSelection(content);
-
-
-
-
-
 
   //Search keyboard Appareils
   const appareilsList = document.getElementById("appareils_list");
@@ -123,7 +118,7 @@ readTextFile("./json/recettes.json", function (text) {
         const appareilOne = document.createElement("li");
         appareilOne.setAttribute("class", "appareil_list-deroulant");
         appareilOne.innerHTML = appareil;
-        
+
         appareilsList.append(appareilOne);
       });
       const appareilButton = document.querySelector(".appareils_button");
@@ -132,13 +127,12 @@ readTextFile("./json/recettes.json", function (text) {
       });
     }
     AppSelection(content);
-
   });
   Array.from(new Set(arrayApp)).forEach((appareil) => {
     const appareilOne = document.createElement("li");
     appareilOne.setAttribute("class", "appareil_list-deroulant");
     appareilOne.innerHTML = appareil;
-    
+
     appareilsList.append(appareilOne);
   });
   const appareilButton = document.querySelector(".appareils_button");
@@ -148,58 +142,80 @@ readTextFile("./json/recettes.json", function (text) {
 
   AppSelection(content);
 
-
-
-   //Search keyboard Ustensiles
-   const ustensilesList = document.getElementById("ustensiles_list");
-   const searchUst = document.getElementById("ustensiles-q");
-   searchUst.addEventListener("keyup", (e) => {
+  //Search keyboard Ustensiles
+  const ustensilesList = document.getElementById("ustensiles_list");
+  const searchUst = document.getElementById("ustensiles-q");
+  searchUst.addEventListener("keyup", (e) => {
     ustensilesList.innerHTML = "";
-     if (e.target.value.length >= 3) {
-       Array.from(
-         new Set(
-           arrayUst.filter((i) =>
-             i.toLowerCase().includes(e.target.value.toLowerCase())
-           )
-         )
-       ).forEach((ustensile) => {
-         const ustensileOne = document.createElement("li");
-         ustensileOne.setAttribute("class", "ustensile_list-deroulant");
-         ustensileOne.innerHTML = ustensile;
- 
-         ustensilesList.append(ustensileOne);
-       });
-       UstSelection(content);
-     } else {
-       Array.from(new Set(arrayUst)).forEach((ustensile) => {
-         const ustensileOne = document.createElement("li");
-         ustensileOne.setAttribute("class", "ustensile_list-deroulant");
-         ustensileOne.innerHTML = ustensile;
-         
-         ustensilesList.append(ustensileOne);
-       });
-       const ustensileButton = document.querySelector(".ustensiles_button");
-       ustensileButton.addEventListener("click", () => {
+    if (e.target.value.length >= 3) {
+      Array.from(
+        new Set(
+          arrayUst.filter((i) =>
+            i.toLowerCase().includes(e.target.value.toLowerCase())
+          )
+        )
+      ).forEach((ustensile) => {
+        const ustensileOne = document.createElement("li");
+        ustensileOne.setAttribute("class", "ustensile_list-deroulant");
+        ustensileOne.innerHTML = ustensile;
+
+        ustensilesList.append(ustensileOne);
+      });
+      UstSelection(content);
+    } else {
+      Array.from(new Set(arrayUst)).forEach((ustensile) => {
+        const ustensileOne = document.createElement("li");
+        ustensileOne.setAttribute("class", "ustensile_list-deroulant");
+        ustensileOne.innerHTML = ustensile;
+
+        ustensilesList.append(ustensileOne);
+      });
+      const ustensileButton = document.querySelector(".ustensiles_button");
+      ustensileButton.addEventListener("click", () => {
         ustensilesList.style.display = "flex";
-       });
-     }
-     UstSelection(content);
- 
-   });
-   Array.from(new Set(arrayUst)).forEach((ustensile) => {
-     const ustensileOne = document.createElement("li");
-     ustensileOne.setAttribute("class", "ustensile_list-deroulant");
-     ustensileOne.innerHTML = ustensile;
-     
-     ustensilesList.append(ustensileOne);
-   });
-   const ustensileButton = document.querySelector(".ustensiles_button");
-   ustensileButton.addEventListener("click", () => {
+      });
+    }
+    UstSelection(content);
+  });
+  Array.from(new Set(arrayUst)).forEach((ustensile) => {
+    const ustensileOne = document.createElement("li");
+    ustensileOne.setAttribute("class", "ustensile_list-deroulant");
+    ustensileOne.innerHTML = ustensile;
+
+    ustensilesList.append(ustensileOne);
+  });
+  const ustensileButton = document.querySelector(".ustensiles_button");
+  ustensileButton.addEventListener("click", () => {
     ustensilesList.style.display = "flex";
-   });
- 
-   UstSelection(content);
+  });
+
+  UstSelection(content);
 
 
-  
+
+
+
+  const searchGen = document.getElementById("search-q");
+  searchGen.addEventListener("keyup", (e) => {
+    let searchRecette = [];
+    if (e.target.value.length >= 3) {
+      content.forEach((item) => {
+        let arraySearch = [];
+        arraySearch.push(item.name.toLowerCase());
+        item.ingredients.forEach((ing) => {
+          arraySearch.push(ing.ingredient.toLowerCase());
+        });
+        arraySearch.push(item.description.toLowerCase());
+        arraySearch.forEach((arr) => {
+          if (arr.includes(e.target.value.toLowerCase()) && !searchRecette.includes(item)) {
+            searchRecette.push(item);
+            console.log(item)
+          }
+        });
+      });
+      contentMain(searchRecette);
+    }else{
+      contentMain(content)
+    }
+  });
 });
