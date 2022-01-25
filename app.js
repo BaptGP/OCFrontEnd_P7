@@ -191,31 +191,35 @@ readTextFile("./json/recettes.json", function (text) {
 
   UstSelection(content);
 
-
-
-
-
   const searchGen = document.getElementById("search-q");
   searchGen.addEventListener("keyup", (e) => {
     let searchRecette = [];
     if (e.target.value.length >= 3) {
-      content.forEach((item) => {
-        let arraySearch = [];
-        arraySearch.push(item.name.toLowerCase());
-        item.ingredients.forEach((ing) => {
-          arraySearch.push(ing.ingredient.toLowerCase());
-        });
-        arraySearch.push(item.description.toLowerCase());
-        arraySearch.forEach((arr) => {
-          if (arr.includes(e.target.value.toLowerCase()) && !searchRecette.includes(item)) {
-            searchRecette.push(item);
-            console.log(item)
+      for (let i = 0; i < content.length; i++) {
+        if (
+          content[i].name.toLowerCase().includes(e.target.value.toLowerCase())
+        ) {
+          searchRecette.push(content[i]);
+        }
+        if (
+          content[i].description
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase())
+        ) {
+          searchRecette.push(content[i]);
+        }
+        for (let ing; ing < content[i].ingredients; i++) {
+          console.log(content[i].ingredients[ing]);
+          if (
+            ing.ingredient.toLowerCase().includes(e.target.value.toLowerCase())
+          ) {
+            searchRecette.push(content[i]);
           }
-        });
-      });
+        }
+      }
       contentMain(searchRecette);
-    }else{
-      contentMain(content)
+    } else {
+      contentMain(content);
     }
   });
 });
