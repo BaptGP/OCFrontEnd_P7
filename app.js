@@ -197,21 +197,20 @@ readTextFile("./json/recettes.json", function (text) {
     if (e.target.value.length >= 3) {
       for (let i = 0; i < content.length; i++) {
         if (
-          content[i].name.toLowerCase().includes(e.target.value.toLowerCase())
+          content[i].name.toLowerCase().includes(e.target.value.toLowerCase()) && !searchRecette.includes(content[i])
         ) {
           searchRecette.push(content[i]);
         }
         if (
           content[i].description
             .toLowerCase()
-            .includes(e.target.value.toLowerCase())
+            .includes(e.target.value.toLowerCase()) && !searchRecette.includes(content[i])
         ) {
           searchRecette.push(content[i]);
         }
         for (let ing; ing < content[i].ingredients; i++) {
-          console.log(content[i].ingredients[ing]);
           if (
-            ing.ingredient.toLowerCase().includes(e.target.value.toLowerCase())
+            ing.ingredient.toLowerCase().includes(e.target.value.toLowerCase()) && !searchRecette.includes(content[i])
           ) {
             searchRecette.push(content[i]);
           }
