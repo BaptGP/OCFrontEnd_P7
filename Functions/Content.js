@@ -52,7 +52,7 @@ export function contentMain(data) {
   
       const description = document.createElement("span");
       description.setAttribute("class", "description");
-      description.innerHTML = element.description;
+      description.innerHTML = element.description.slice(0,150) + "[...]";
       textContent.append(description);
   
       recettes.append(recettesContent);
