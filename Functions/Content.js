@@ -1,6 +1,7 @@
 export function contentMain(data) {
-    const main = document.getElementById("main");
-    main.innerHTML = "";
+  const main = document.getElementById("main");
+  main.innerHTML = "";
+  if(data != "empty"){
     data.forEach((element) => {
       const recettes = document.createElement("div");
       recettes.setAttribute("class", "recettes");
@@ -65,4 +66,14 @@ export function contentMain(data) {
       recettesDescription.append(textContent);
       main.append(recettes);
     });
+
+  }else{
+    const emptyRecette =  document.createElement('div')
+    emptyRecette.setAttribute('class', 'empty-recette-div')
+    const empty = document.createElement('h1')
+    empty.innerHTML = "Aucune recette disponible"
+    emptyRecette.append(empty)
+
+    main.append(emptyRecette)
   }
+}

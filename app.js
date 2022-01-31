@@ -197,22 +197,32 @@ readTextFile("./json/recettes.json", function (text) {
     if (e.target.value.length >= 3) {
       for (let i = 0; i < content.length; i++) {
         if (
-          content[i].name.toLowerCase().includes(e.target.value.toLowerCase()) && !searchRecette.includes(content[i])
+          content[i].name
+            .toLowerCase()
+            .includes(e.target.value.toLowerCase()) &&
+          !searchRecette.includes(content[i])
         ) {
           searchRecette.push(content[i]);
-        }
-        if (
+        } else if (
           content[i].description
             .toLowerCase()
-            .includes(e.target.value.toLowerCase()) && !searchRecette.includes(content[i])
+            .includes(e.target.value.toLowerCase()) &&
+          !searchRecette.includes(content[i])
         ) {
           searchRecette.push(content[i]);
-        }
-        for (let ing; ing < content[i].ingredients; i++) {
-          if (
-            ing.ingredient.toLowerCase().includes(e.target.value.toLowerCase()) && !searchRecette.includes(content[i])
-          ) {
-            searchRecette.push(content[i]);
+        }else{
+
+          for (let ing; ing < content[i].ingredients; i++) {
+            if (
+              ing.ingredient
+                .toLowerCase()
+                .includes(e.target.value.toLowerCase()) &&
+              !searchRecette.includes(content[i])
+            ) {
+              searchRecette.push(content[i]);
+            }else{
+              contentMain("empty")
+            }
           }
         }
       }
