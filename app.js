@@ -210,6 +210,8 @@ readTextFile("./json/recettes.json", function (text) {
           if (arr.includes(e.target.value.toLowerCase()) && !searchRecette.includes(item)) {
             searchRecette.push(item);
             console.log(item)
+          }else{
+            contentMain("empty")
           }
         });
       });
