@@ -11,7 +11,13 @@ export function IngSelection(content) {
       filtreSpan.setAttribute("class", `selection_filtre-ingredient`);
       filtreSpan.setAttribute("id", `${filtre.innerHTML.toLowerCase()}`);
 
-      filtreSpan.innerHTML = filtre.innerHTML;
+      const titleFiltre = document.createElement('h3')
+      titleFiltre.innerHTML = filtre.innerHTML
+      const suprFiltre = document.createElement('i')
+      suprFiltre.setAttribute('class', 'fas fa-times')
+
+      filtreSpan.append(titleFiltre)
+      filtreSpan.append(suprFiltre)
 
       selectionFiltre.append(filtreSpan);
       ingredientsList.style.display = "none";
@@ -34,7 +40,7 @@ export function IngSelection(content) {
         .forEach((filter) => {
           filter.addEventListener("click", () => {
             let elem = document.getElementById(
-              `${filter.innerHTML.toLowerCase()}`
+              `${filter.getAttribute('id').toLowerCase()}`
             );
             elem.parentNode.removeChild(elem);
             let arrayFilter = [];
