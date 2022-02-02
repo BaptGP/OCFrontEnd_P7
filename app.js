@@ -93,6 +93,11 @@ readTextFile("./json/recettes.json", function (text) {
   });
 
   IngSelection(content);
+  searchIng.onblur = function() {
+    setTimeout(() => {
+      ingredientsList.style.display = "none"
+    }, 200)
+  }
 
   //Search keyboard Appareils
   const appareilsList = document.getElementById("appareils_list");
@@ -142,6 +147,11 @@ readTextFile("./json/recettes.json", function (text) {
   });
 
   AppSelection(content);
+  searchApp.onblur = function() {
+    setTimeout(() => {
+      appareilsList.style.display = "none"
+    }, 200)
+  }
 
   //Search keyboard Ustensiles
   const ustensilesList = document.getElementById("ustensiles_list");
@@ -191,6 +201,11 @@ readTextFile("./json/recettes.json", function (text) {
   });
 
   UstSelection(content);
+  searchUst.onblur = function() {
+    setTimeout(() => {
+      ustensilesList.style.display = "none"
+    }, 200)
+  }
 
   const searchGen = document.getElementById("search-q");
   searchGen.addEventListener("keyup", (e) => {
