@@ -25,12 +25,46 @@ export function majListeIng(data) {
 }
 
 
-export function majListeApp() {
+export function majListeApp(data) {
+    const appareilsList = document.getElementById("appareils_list");
+    appareilsList.innerHTML = "";
+    let arrayApp = []
+    data.forEach((item) => {
+        if(!arrayApp.includes(item.appliance)){
+            arrayApp.push(item.appliance)
+        }
+    })
+    arrayApp.sort()
+    arrayApp.forEach(app => {
+        const appareilOne = document.createElement("li");
+        appareilOne.setAttribute("class", "appareil_list-deroulant");
+        appareilOne.innerHTML = app;
 
+        appareilsList.append(appareilOne);
+    })
+    AppSelection(data);
 }
 
 
-export function majListeUst() {
+export function majListeUst(data) {
+    const ustensilesList = document.getElementById("ustensiles_list");
+    ustensilesList.innerHTML = "";
+    let arrayUst = []
+    data.forEach((item) => {
+        item.ustensils.forEach(ust => {
+            if(!arrayUst.includes(ust)){
+                arrayUst.push(ust)
+            }
+        }) 
+    })
+    arrayUst.sort()
+    arrayUst.forEach(ust => {
+        const ustensileOne = document.createElement("li");
+        ustensileOne.setAttribute("class", "ustensile_list-deroulant");
+        ustensileOne.innerHTML = ust;
 
+        ustensilesList.append(ustensileOne);
+    })
+    UstSelection(data);
 }
 
