@@ -2,6 +2,7 @@ import { IngSelection } from "./Functions/SelectionIngredients.js";
 import { AppSelection } from "./Functions/SelectionAppareils.js";
 import { UstSelection } from "./Functions/SelectionUstensiles.js";
 import { contentMain } from "./Functions/Content.js";
+import {majListeIng} from "./Functions/majListe.js"
 
 /* Recup JSON */
 function readTextFile(file, callback) {
@@ -227,8 +228,13 @@ readTextFile("./json/recettes.json", function (text) {
         }
       }
       contentMain(searchRecette);
+      majListeIng(searchRecette);
     } else {
       contentMain(content);
+      majListeIng(content);
     }
+    
+    // majListeApp(searchRecette);
+    // majListeUst(searchRecette);
   });
 });

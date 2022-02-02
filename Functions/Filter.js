@@ -1,4 +1,5 @@
 import { contentMain } from "./Content.js";
+import {majListeIng} from './majListe.js'
 
 export function addFilter(content) {
     let allRecettes = content;
@@ -80,6 +81,9 @@ export function addFilter(content) {
         goodRecipes.push(recette);
         contentMain(goodRecipes);
         sessionStorage.setItem("recettes", JSON.stringify(goodRecipes));
+        majListeIng(goodRecipes);
+        // majListeApp(goodRecipes);
+        // majListeUst(goodRecipes);
       }
     });
   }
