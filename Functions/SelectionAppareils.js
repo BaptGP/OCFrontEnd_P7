@@ -7,11 +7,16 @@ export function AppSelection(content) {
   const selectionFiltre = document.getElementById("selection_filtre");
   document.querySelectorAll(".appareil_list-deroulant").forEach((filtre) => {
     filtre.onclick = function () {
-      const filtreSpan = document.createElement("span");
+      const filtreSpan = document.createElement("div");
       filtreSpan.setAttribute("class", `selection_filtre-appareil`);
       filtreSpan.setAttribute("id", `${filtre.innerHTML.toLowerCase()}`);
+      const titleFiltre = document.createElement('h3')
+      titleFiltre.innerHTML = filtre.innerHTML
+      const suprFiltre = document.createElement('i')
+      suprFiltre.setAttribute('class', 'fas fa-times')
 
-      filtreSpan.innerHTML = filtre.innerHTML;
+      filtreSpan.append(titleFiltre)
+      filtreSpan.append(suprFiltre)
 
       selectionFiltre.append(filtreSpan);
       appareilsList.style.display = "none";
@@ -32,9 +37,10 @@ export function AppSelection(content) {
       document
         .querySelectorAll(".selection_filtre-appareil")
         .forEach((filter) => {
+          console.log(filter)
           filter.addEventListener("click", () => {
             let elem = document.getElementById(
-              `${filter.innerHTML.toLowerCase()}`
+              `${filter.getAttribute('id').toLowerCase()}`
             );
             elem.parentNode.removeChild(elem);
             let arrayFilter = [];
