@@ -391,6 +391,8 @@ h1{
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  display: flex;
+  cursor: pointer;
 }
 
 .selection_filtre-appareil{
@@ -399,6 +401,17 @@ h1{
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  display: flex;
+  cursor: pointer;
+}
+.selection_filtre-appareil h3{
+  margin-right: 8px;
+}
+.selection_filtre-ustensile h3{
+  margin-right: 8px;
+}
+.selection_filtre-ingredient h3{
+  margin-right: 8px;
 }
 
 .selection_filtre-ustensile{
@@ -407,9 +420,6 @@ h1{
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 5px;
-}
-
-
-.empty-recette-div{
   display: flex;
+  cursor: pointer;
 }
