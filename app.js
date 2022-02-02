@@ -2,6 +2,7 @@ import { IngSelection } from "./Functions/SelectionIngredients.js";
 import { AppSelection } from "./Functions/SelectionAppareils.js";
 import { UstSelection } from "./Functions/SelectionUstensiles.js";
 import { contentMain } from "./Functions/Content.js";
+import { majListeIng, majListeApp, majListeUst } from "./Functions/majListe.js";
 
 /* Recup JSON */
 function readTextFile(file, callback) {
@@ -191,10 +192,6 @@ readTextFile("./json/recettes.json", function (text) {
 
   UstSelection(content);
 
-
-
-
-
   const searchGen = document.getElementById("search-q");
   searchGen.addEventListener("keyup", (e) => {
     let searchRecette = [];
@@ -207,17 +204,26 @@ readTextFile("./json/recettes.json", function (text) {
         });
         arraySearch.push(item.description.toLowerCase());
         arraySearch.forEach((arr) => {
-          if (arr.includes(e.target.value.toLowerCase()) && !searchRecette.includes(item)) {
+          if (
+            arr.includes(e.target.value.toLowerCase()) &&
+            !searchRecette.includes(item)
+          ) {
             searchRecette.push(item);
-            console.log(item)
-          }else{
-            contentMain("empty")
+            console.log(item);
+          } else {
+            contentMain("empty");
           }
         });
       });
       contentMain(searchRecette);
-    }else{
-      contentMain(content)
+      majListeIng(searchRecette);
+      majListeApp(searchRecette);
+      majListeUst(searchRecette);
+    } else {
+      contentMain(content);
+      majListeIng(content);
+      majListeApp(content);
+      majListeUst(content);
     }
   });
 });
